@@ -1,0 +1,46 @@
+.purpleColor , .pinkColor{
+    transition: 1s;
+}
+
+.animation1:hover  .purpleColor{
+    
+    color: #9B59B6;
+    font-size: small;
+    transition:font-size .5s;
+    
+}
+.animation1:hover  .pinkColor{
+    color: #2ECC71;
+    font-size: small;
+    transition:font-size .5s;
+}
+.shape{
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    background-color: brown;
+    width: 232px !important;
+    height: 38px !important;
+
+}
+.programas-servicios .folder .folder-body .item-prog-serv[data-v-5fa1ad60] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .3em 0;
+}
+.folder, .folder .folder-header {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.programas-servicios .folder .folder-body[data-v-5fa1ad60] {
+    display: grid;
+    grid-template-columns: auto auto;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}

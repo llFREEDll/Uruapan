@@ -12,6 +12,8 @@ import domingoDeRamosImg from '../assets/domingoDeRamos.jpg'
 import festivalDeVelasImg from '../assets/festivalDeVelas.jpg'
 import lugaresTuristicosImg from '../assets/lugaresTuristicos.jpg'
 import { Link } from 'react-router-dom'
+
+
 const Main = ()=>(
     <div>
         <NavBar/>

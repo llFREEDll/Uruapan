@@ -28,6 +28,7 @@ const BgImageCardList = () =>(
                     <Link to = "/tramites-en-linea" className="card border-0 text-dark text-decoration-none">
                         
                         <img src= {pagoEnLineaLogo} className="card-img" alt="..."/>                
+                        
                     </Link>
                     
                 </div>
