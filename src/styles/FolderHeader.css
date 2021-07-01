@@ -1,0 +1,31 @@
+.shape{
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    background-color: #E72B5E;
+    width: 232px !important;
+    height: 38px !important;
+    border: 0;
+
+}
+.pShape{
+    margin-top: 10px !important;
+
+}
+.shape2{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    background-color: #E72B5E;
+    margin-top: -5px;
+    border: 0;
+    width: 75% !important;
+    min-width: 250px;
+    height: 5px !important;
+
+}
+.shape3{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    background-color: #E72B5E;
+    margin-top: -2px;
+    border: 0;
+    width: 100% !important;
+    height: 2px !important;
+
+}

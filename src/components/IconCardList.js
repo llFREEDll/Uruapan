@@ -2,35 +2,44 @@ import React from 'react'
 import '../styles/IconCard.css'
 import IconCard from './IconCard'
 import settingsIcon from '../assets/settingsIcon.png'
+import serviceIcon from '../assets/serviceIcon.png'
 import infoIcon from '../assets/infoIcon.png'
+import FolderHeader from './FolderHeader'
+
 
 const IconCardList = () =>(
-    <div className = "container my-5">
+    <div className = " mt-5">
         
-        <div className = "row row-cols-1 row-cols-md-3 g-4">
+        <FolderHeader p = "CASA PAMAR"/>
+        
+        <div className = "container mt-5">
+            
+            <div className = "row row-cols-2 row-cols-md-3 g-4">
+                    
+                    <IconCard img = {settingsIcon} pClass = " greenColor small-txt" p ="PROGRAMA DE PROMOCIÓN Y DIFUSIÓN DE LOS DERECHOS DE LA INFANCIA"/>
                 
-                <IconCard img = {settingsIcon} pClass = " pinkColor" p ="PROGRAMA DE PROMOCIÓN Y DIFUSIÓN DE LOS DERECHOS DE LA INFANCIA"/>
-            
-                <IconCard img = {infoIcon} pClass = "purpleColor" p ="PROGRAMA DE ATENCIÓN Y PREVENCIÓN DEL TRABAJO INFANTIL"/>
-            
-                <IconCard img = {settingsIcon} pClass = " pinkColor" p ="ATENCIÓN PSICOLÓGICA"/>
-            
-                <IconCard img = {infoIcon} pClass = " purpleColor" p ="PROGRAMA DE PREVENCIÓN RIESGOS PSICOSOCIALES EMBARAZO ADOLESCENTE"/>
-            
-                <IconCard img = {settingsIcon} pClass = " pinkColor" p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES PRENATAL Y POSNATAL"/>
-            
-                <IconCard img = {infoIcon} pClass = " purpleColor" p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES ADICCIONES"/>
-            
-                <IconCard img = {settingsIcon} pClass = " pinkColor" p ="PROGRAMA DE PREVENCIÓN CONTRA LA EXPLOTACIÓN SEXUAL INFANTIL"/>
-            
-                <IconCard img = {infoIcon} pClass = " purpleColor" p ="PROGRAMA DESARROLLO DE HABILIDADES DEL BUEN TRATO EN LA FAMILIA"/>
-            
-                <IconCard img = {settingsIcon} pClass = " pinkColor" p ="TALLERES DE FUTBOL Y BASQUETBOL"/>
-            
-                <IconCard img = {infoIcon} pClass = "purpleColor" p ="TALLERES DE PINTURA Y MANUALIDADES"/>
-            
+                    <IconCard img = {serviceIcon} pClass = " pinkColor small-txt"  p ="PROGRAMA DE ATENCIÓN Y PREVENCIÓN DEL TRABAJO INFANTIL"/>
+                
+                    <IconCard img = {settingsIcon} pClass = " small-txt greenColor" p ="ATENCIÓN PSICOLÓGICA"/>
+                
+                    <IconCard img = {infoIcon} pClass = " YellowColor small-txt" p ="PROGRAMA DE PREVENCIÓN RIESGOS PSICOSOCIALES EMBARAZO ADOLESCENTE"/>
+                
+                    <IconCard img = {serviceIcon} pClass = " pinkColor small-txt" p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES PRENATAL Y POSNATAL"/>
+                
+                    <IconCard img = {infoIcon} pClass = "YellowColor small-txt"  p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES ADICCIONES"/>
+                
+                    <IconCard img = {serviceIcon} pClass = " pinkColor small-txt" p ="PROGRAMA DE PREVENCIÓN CONTRA LA EXPLOTACIÓN SEXUAL INFANTIL"/>
+                
+                    <IconCard img = {infoIcon} pClass = " YellowColor small-txt" p ="PROGRAMA DESARROLLO DE HABILIDADES DEL BUEN TRATO EN LA FAMILIA"/>
+                
+                    <IconCard img = {settingsIcon} pClass = " greenColor small-txt" p ="TALLERES DE FUTBOL Y BASQUETBOL"/>
+                
+                    <IconCard img = {infoIcon} pClass = "YellowColor small-txt" p ="TALLERES DE PINTURA Y MANUALIDADES"/>
+
+                    
+                
+            </div>
         </div>
-        
         
     </div>
     
