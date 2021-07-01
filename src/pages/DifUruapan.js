@@ -2,9 +2,11 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import IconCardList from '../components/IconCardList'
-import Carousel from '../components/Carousel'
+import CarouselDif from '../components/CarouselDif'
 import ComunicadosList from '../components/CominicadosList'
 import JornadasList from '../components/JornadasList'
+import AsistenciaSocialList from '../components/AsistenciaSocialList'
+import ServiciosMedicosList from '../components/ServiciosMedicosList'
 
 class DifUruapan extends React.Component{
     componentDidMount(){
@@ -15,10 +17,12 @@ class DifUruapan extends React.Component{
             <div>
 
                 <NavBar/>
-                <Carousel/>
+                <CarouselDif/>
                 <JornadasList/>
                 <ComunicadosList/>
                 <IconCardList/>
+                <AsistenciaSocialList/>
+                <ServiciosMedicosList/>
                 <Footer/>
 
             </div>

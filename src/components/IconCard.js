@@ -7,7 +7,7 @@ class IconCard extends React.Component{
         return(
             <div className = "col animation1">
                 
-                <Link to ="/" className="card h-100 border-0  text-decoration-none text-dark" >
+                <Link to ="/servicios" className="card h-100 border-0  text-decoration-none text-dark" >
                     <div className="row d-flex align-items-center ">
                         <div className="col-4">
                         <img src={this.props.img} className="float-right img-fluid" alt="..."/>

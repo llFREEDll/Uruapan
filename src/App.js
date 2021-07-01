@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import DifUruapan from './pages/DifUruapan';
 import Main from './pages/Main'
+import Servicios from './pages/Servicios';
 
 
 class App extends React.Component {
@@ -10,25 +11,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fakeRequest().then(() => {
-      const el = document.querySelector(".div-spinner");
-      if (el) {
-        el.remove();  // removing the spinner element
-        this.setState({ loading: false }); // showing the app
-      }
-    });
+    // this.fakeRequest().then(() => {
+    //   const el = document.querySelector(".div-spinner");
+    //   if (el) {
+    //     el.remove();  // removing the spinner element
+    //     this.setState({ loading: false }); // showing the app
+    //   }
+    // });
   }
-  fakeRequest = () => {
-    return new Promise(resolve => setTimeout(() => resolve(), 2000));
-  };
+  // fakeRequest = () => {
+  //   return new Promise(resolve => setTimeout(() => resolve(), 2000));
+  // };
   
   render(){
-    if (this.state.loading) {
-      return(
+    // if (this.state.loading) {
+    //   return(
 
-        null
-      )
-    }
+    //     null
+    //   )
+    // }
     
     return(
       <Router>
@@ -36,7 +37,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path = "/" component = {Main}/>
           <Route exact path = "/dif-uruapan" component = {DifUruapan}/>
-      </Switch>
+          <Route exact path = "/servicios" component = {Servicios}/>
+        </Switch> 
       </Router>
     )
   }

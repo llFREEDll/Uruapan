@@ -18,7 +18,7 @@ const BgImageCardList = () =>(
             <BgImageCard Link = "https://implanuruapan.gob.mx/" img = {implanLogo}/>
             <div className = "col p-4">
                 <div className = "card shadow m-2 bg-body rounded d-flex align-items-center">
-                    <Link to = "/dif" className="card border-0">
+                    <Link to = "/dif-uruapan" className="card border-0">
                         <img src= {difLogo} className="card-img " alt="..."/>                
                     </Link>
                 </div>

@@ -16,28 +16,26 @@ const IconCardList = () =>(
             
             <div className = "row row-cols-2 row-cols-md-3 g-4">
                     
-                    <IconCard img = {settingsIcon} pClass = " greenColor small-txt" p ="PROGRAMA DE PROMOCIÓN Y DIFUSIÓN DE LOS DERECHOS DE LA INFANCIA"/>
+                <IconCard img = {settingsIcon} pClass = " greenColor" p ="PROGRAMA DE PROMOCIÓN"/>
                 
-                    <IconCard img = {serviceIcon} pClass = " pinkColor small-txt"  p ="PROGRAMA DE ATENCIÓN Y PREVENCIÓN DEL TRABAJO INFANTIL"/>
+                <IconCard img = {serviceIcon} pClass = " pinkColor "  p ="PROGRAMA DE ATENCIÓN "/>
                 
-                    <IconCard img = {settingsIcon} pClass = " small-txt greenColor" p ="ATENCIÓN PSICOLÓGICA"/>
+                <IconCard img = {settingsIcon} pClass = " greenColor" p ="ATENCIÓN PSICOLÓGICA"/>
                 
-                    <IconCard img = {infoIcon} pClass = " YellowColor small-txt" p ="PROGRAMA DE PREVENCIÓN RIESGOS PSICOSOCIALES EMBARAZO ADOLESCENTE"/>
+                <IconCard img = {infoIcon} pClass = " YellowColor small-txt" p ="PROGRAMA DE PREVENCIÓN RIESGOS PSICOSOCIALES EMBARAZO ADOLESCENTE"/>
                 
-                    <IconCard img = {serviceIcon} pClass = " pinkColor small-txt" p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES PRENATAL Y POSNATAL"/>
+                <IconCard img = {serviceIcon} pClass = " pinkColor small-txt" p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES PRENATAL Y POSNATAL"/>
                 
-                    <IconCard img = {infoIcon} pClass = "YellowColor small-txt"  p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES ADICCIONES"/>
+                <IconCard img = {infoIcon} pClass = "YellowColor small-txt"  p ="PROGRAMA DE PREVENCIÓN DE RIESGOS PSICOSOCIALES ADICCIONES"/>
                 
-                    <IconCard img = {serviceIcon} pClass = " pinkColor small-txt" p ="PROGRAMA DE PREVENCIÓN CONTRA LA EXPLOTACIÓN SEXUAL INFANTIL"/>
+                <IconCard img = {serviceIcon} pClass = " pinkColor small-txt" p ="PROGRAMA DE PREVENCIÓN CONTRA LA EXPLOTACIÓN SEXUAL INFANTIL"/>
                 
-                    <IconCard img = {infoIcon} pClass = " YellowColor small-txt" p ="PROGRAMA DESARROLLO DE HABILIDADES DEL BUEN TRATO EN LA FAMILIA"/>
+                <IconCard img = {infoIcon} pClass = " YellowColor small-txt" p ="PROGRAMA DESARROLLO DE HABILIDADES DEL BUEN TRATO EN LA FAMILIA"/>
                 
-                    <IconCard img = {settingsIcon} pClass = " greenColor small-txt" p ="TALLERES DE FUTBOL Y BASQUETBOL"/>
+                <IconCard img = {settingsIcon} pClass = " greenColor small-txt" p ="TALLERES DE FUTBOL Y BASQUETBOL"/>
                 
-                    <IconCard img = {infoIcon} pClass = "YellowColor small-txt" p ="TALLERES DE PINTURA Y MANUALIDADES"/>
+                <IconCard img = {infoIcon} pClass = "YellowColor small-txt" p ="TALLERES DE PINTURA Y MANUALIDADES"/>
 
-                    
-                
             </div>
         </div>
         
