@@ -19,10 +19,10 @@ class DifUruapan extends React.Component{
                 <NavBar/>
                 <CarouselDif/>
                 <JornadasList/>
-                <ComunicadosList/>
                 <IconCardList/>
                 <AsistenciaSocialList/>
                 <ServiciosMedicosList/>
+                <ComunicadosList/>
                 <Footer/>
 
             </div>
