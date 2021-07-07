@@ -1,10 +1,9 @@
 import React from 'react'
 
-//<div class="card-img-overlay">
-//     <h5 class="card-title">Card title</h5>
-//     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-//     <p class="card-text">Last updated 3 mins ago</p>
-// </div>
+//tarjeta diseñada para el apartado de servicos externos
+//despliega una tarjeta con un fondo el cual representa
+//cada uno de los servicos externos
+//como capasu, implan, pago de predial, entre otros
 class BgImageCard extends React.Component{
     render(){
         return(

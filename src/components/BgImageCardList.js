@@ -7,6 +7,8 @@ import implanLogo from '../assets/implanLogo.png'
 import BgImageCard from './BgImageCard'
 import { Link } from 'react-router-dom'
 
+//Lista de targetas que despliega los links de los servicos externos 
+//se muestra en la pantalla principal
 const BgImageCardList = () =>(
     <div className = "container">
         <div className="row row-cols-1 row-cols-md-3 my-3 d-flex  align-items-center">

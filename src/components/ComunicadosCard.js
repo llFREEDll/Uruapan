@@ -2,7 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 
+
+//tarjeta de comunicados la cual despliega un modal on click
+//tiene un fondo con opacidad genrado con css
+//el modal es generado con react-bootstrap 
+//la tarjeta es generada con bootstrap y css
+
 class ComunicadosCard extends React.Component {
+    //el stado "show" es el manejador del modal
     state = {
         show : false
       }

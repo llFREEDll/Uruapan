@@ -1,8 +1,14 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 
+//Tarjeta que se despliega en /dif-uruapan
+//muestra una imagangen con un box shadow
+//generado con bootstrap
+//on click muestra un modal con la imagen seleccionada
 
 class JornadaCard extends React.Component{
+
+  //Estado y manejador del modal
   state = {
     show : false
   }

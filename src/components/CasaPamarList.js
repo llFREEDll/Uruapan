@@ -6,8 +6,13 @@ import serviceIcon from '../assets/serviceIcon.png'
 import infoIcon from '../assets/infoIcon.png'
 import FolderHeader from './FolderHeader'
 
+//componente que genera la lista de servcios que proporciona
+//la sub division casa PAMAR
+//mestra los diferentes servicios con una tarjeta con icono
+//al igual que servicios medicos y asistencia social 
+//se despliega en /dif-uruapan
 
-const IconCardList = () =>(
+const CasaPamarList = () =>(
     <div className = " mt-5">
         
         <FolderHeader p = "CASA PAMAR"/>
@@ -43,4 +48,4 @@ const IconCardList = () =>(
     
 )
 
-export default IconCardList
+export default CasaPamarList

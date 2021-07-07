@@ -6,6 +6,10 @@ import carousel4 from '../assets/carousel8.jpg'
 import $ from "jquery";
 import "jquery-ui/ui/effects/effect-slide"
 
+//Un carrusel diseñado para la pantalla de dif-uruapan
+//este se puede editar desde el administrador y se pueden agregar
+//imagenes de lo que hace en el dif
+//diseñado con bootstrap y jquery UI para las animanciones
 
 class  CarouselDif extends React.Component {
     componentDidMount(){

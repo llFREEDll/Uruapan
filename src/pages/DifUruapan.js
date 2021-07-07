@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
-import IconCardList from '../components/IconCardList'
+import CasaPamarList from '../components/CasaPamarList'
 import CarouselDif from '../components/CarouselDif'
 import ComunicadosList from '../components/CominicadosList'
 import JornadasList from '../components/JornadasList'
@@ -19,7 +19,7 @@ class DifUruapan extends React.Component{
                 <NavBar/>
                 <CarouselDif/>
                 <JornadasList/>
-                <IconCardList/>
+                <CasaPamarList/>
                 <AsistenciaSocialList/>
                 <ServiciosMedicosList/>
                 <ComunicadosList/>

@@ -7,6 +7,11 @@ import phoneIcon from '../assets/phoneIcon.png'
 import locationIcon from '../assets/locationIcon.png'
 import '../styles/NavBar.css'
 
+//pie de pagina de la aplicacion
+//contiene un iframe con la ubicacion del ayuntamiento
+//asi como los diferentes links de contacto
+//telefono, facebook,twitter y youtube
+
 const Footer = () =>(
     <div className = "bd-footer pt-5 mt-5 color2 text-white">
         <div className = "mx-5">

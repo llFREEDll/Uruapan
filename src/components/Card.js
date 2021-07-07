@@ -1,5 +1,10 @@
 import React from 'react'
 
+//Tarjeta diseñada para usarse de manera general
+//se despliega en varias pantallas
+//es una targeta un una imagen en top, una descripcion
+// y un link a una vista de la aplicacion web
+//animada con css
 class Card extends React.Component{
     render(){
         return(

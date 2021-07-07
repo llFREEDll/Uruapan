@@ -4,27 +4,10 @@ import logo from '../assets/logo1.png'
 import '../styles/NavBar.css'
 import '../styles/general.css'
 
-// <div className="nav-item dropdown text-decoration-none">
-                //     <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                //         DIF Municipal
-                //     </a>
-                //     <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                //         <li><Link className="dropdown-item" to="/casa-pamar">Casa PAMAR</Link></li>
-                //         <li><Link className="dropdown-item" to="/asistencia-social">Asistencia Social</Link></li>
-                //         <li><Link className="dropdown-item" to="/servcios-medicos">Servicios Médicos</Link></li>
-                //     </ul>
-                // </div>
-                // <div className="nav-item dropdown text-decoration-none">
-                //     <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                //         Turismo
-                //     </a>
-                //     <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                //         <li><Link className="dropdown-item" to="/lugares-turisticos">Lugares Turísticos</Link></li>
-                //         <li><Link className="dropdown-item" to="/tianguis-artesanal">Tianguis Artesanal <br/>Domingo de Ramos</Link></li>
-                //         <li><Link className="dropdown-item" to="/festival-de-velas">Festival de Velas </Link></li>
-                //     </ul>
-                // </div> 
-
+//barra de navegacion de la aplicacion web
+//tiene links de acceso a cada una de las pantallas de la aplicacion 
+//hecha con bootstrap 
+//se despliega en todas las pantallas de la aplicacion
 const NavBar = () =>(
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark backgroundColor">

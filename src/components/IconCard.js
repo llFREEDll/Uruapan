@@ -2,6 +2,10 @@ import React from 'react'
 import "jquery-ui/ui/effects/effect-size"
 import { Link } from 'react-router-dom';
 
+//Componente que muestra una tarjeta con un icono a la izquierda
+//y una descripcion a la derecha.
+//Utilizado para mustrar los servicios de
+//asistencia social, servicos medicos y casa pamar
 class IconCard extends React.Component{
     render(){
         return(

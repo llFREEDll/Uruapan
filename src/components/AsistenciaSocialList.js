@@ -6,6 +6,9 @@ import settingsIcon from '../assets/settingsIcon.png'
 import serviceIcon from '../assets/serviceIcon.png'
 import infoIcon from '../assets/infoIcon.png'
 
+
+// Componente que despliega La lista de los servicios referentes a asistencia social
+//se despliega en la pantall /dif-uruapan 
 const AsistenciaSocialList = () =>(
     <div className = " mt-5">
         

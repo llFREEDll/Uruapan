@@ -1,6 +1,10 @@
 import React from 'react'
 import '../styles/FolderHeader.css'
 
+//componente generado para marcar una division entre los diferentes modulos
+//de la pagina web
+//se muestra en la pestaña /dif-uruapan
+//generado mayormente con clases css
 class FolderHeader extends React.Component{
     render(){
         return(

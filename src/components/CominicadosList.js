@@ -7,6 +7,9 @@ import CardImg3 from '../assets/comunicado3.jpg'
 import { Link } from 'react-router-dom'
 import '../styles/ComunicadosCard.css'
 
+
+//Generador de tarjetas que aparece en la ventana de /dif-uruapan
+//tambien despliega un boton que lleva a la ventana /comincados
 const ComunicadosList = ()=>(
     <div className = "my-5">
         <FolderHeader p = "COMUNICADOS"/>

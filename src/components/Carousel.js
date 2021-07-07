@@ -5,7 +5,9 @@ import carousel3 from '../assets/carousel3.jpg'
 import $ from "jquery";
 import "jquery-ui/ui/effects/effect-slide"
 
-
+//carrusel de imagenes que se despliega en la pantalla principal
+//muestra varias imagenes referentes a uruapan
+//hecha 100% con bootstrap y una animacion OnMount con jquery UI
 class  Carousel extends React.Component {
     componentDidMount(){
 

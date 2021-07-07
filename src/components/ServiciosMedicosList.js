@@ -6,6 +6,11 @@ import settingsIcon from '../assets/settingsIcon.png'
 import serviceIcon from '../assets/serviceIcon.png'
 import infoIcon from '../assets/infoIcon.png'
 
+//lista de los servicios medicos que estan disponibles
+//se despliega en /dif-uruapan
+//contiene una cabecera tipo folder
+//y la lista de los servicios
+
 const ServiciosMedicosList = () =>(
     <div className = " mt-5">
         

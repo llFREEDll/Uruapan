@@ -12,6 +12,10 @@ import jornadaImg7 from '../assets/jornada1.jpg'
 import jornadaImg8 from '../assets/jornada8.jpg'
 import jornadaImg9 from '../assets/jornada2.jpg'
 
+//Lista de las jornadas activas
+//se muestra en /dif-uruapan
+//despliega un carrusel el cual muestra las jornadas de 3 en 3 por 
+//pantalla en el carrusel
 
 const JornadasList = () =>(
     <div className = "mt-5"> 
