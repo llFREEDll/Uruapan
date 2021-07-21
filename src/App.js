@@ -12,25 +12,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // this.fakeRequest().then(() => {
-    //   const el = document.querySelector(".div-spinner");
-    //   if (el) {
-    //     el.remove();  // removing the spinner element
-    //     this.setState({ loading: false }); // showing the app
-    //   }
-    // });
+  
   }
-  // fakeRequest = () => {
-  //   return new Promise(resolve => setTimeout(() => resolve(), 2000));
-  // };
   
   render(){
-    // if (this.state.loading) {
-    //   return(
-
-    //     null
-    //   )
-    // }
     
     return(
       <Router>

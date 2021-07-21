@@ -1,120 +1,119 @@
+
+import React,{useState} from 'react'
+
+import AdminJornadas from '../components/AdminJornadas'
+import AdminCarouselDif from '../components/AdminCarouselDif'
+import AdminComunicados from '../components/AdminComunicados'
 import axios from 'axios'
-import React,{useState,useEffect} from 'react'
-import Modal from 'react-bootstrap/Modal'
+import '../styles/Admin.css'
+import md5 from 'md5'
+import logo from '../assets/logo1.png'
+import '../styles/NavBar.css'
+import { Link } from 'react-router-dom'
+import { Alert } from 'react-bootstrap'
 
+//en esta vista se despliegan las opciones de administrador
+// ver, editar, crear, eliminar los componentes de la
+// aplicacion
 const Admin = () => {
-    //URL del api de donde vamos a jalar la base de datos
-    const baseURL = "http://localhost:801/uruapan-api"
-    
-    //url de la tabla que queremos usar 
-    const jornadasURL = "/jornadas-table.php"
-    
-    //Manejadores del modal para insertar un nuevo objeto
-    const [modalInsertar,setModalInsertar] = useState(false)
 
-    //objeto para recibir los datos que se quieren agregar, modal insertar
-    const [jornadaSeleccionada,SetJornadaSeleccionada] = useState({
-        id:"",
-        descripcion:"",
-        imagen:""
+    const baseURL = "http://localhost:801/uruapan-api/login.php"
+
+    //manejador para saber si esta logueado o no
+    const [isLogin,setIsLogin] = useState(false)
+
+    //manejador que muestra error al escribir el usuario o la contrasena incorrecta
+    //si esta activo despliega una alerta marcando el error
+    const [loginError,setLoginError] = useState(false)
+    
+    //manejador para recibir los datos de la api
+    const [data,setData] = useState([])
+
+    //manejador para almacenar los datos del usuario
+    const [userData,setUserData] = useState({
+        id:0,
+        user : "",
+        password: ""
     })
     
-    //manejador para recibir los datos de entrada del usuario del modal insertar
-    //cada que se escribe una letra se actualiza
+
+    //enviar los datos ingresados por el usuario a la api
+    const PostLogin = async() =>{
+        var form = new FormData();
+        form.append("user", userData.user );
+        form.append("password",md5(userData.password) );
+        form.append("METHOD","POST");
+        await axios.post(baseURL,form)
+        .then(response =>{
+            if(response.data === "Login error"){
+                setIsLogin(false);
+                setData({
+                    id:0,
+                    user : "",
+                    password: ""
+                })
+                setLoginError(true)
+            }
+            else{
+                setIsLogin(true);
+                setData(response.data)
+                setLoginError(false)
+            }
+        }).catch(error=>{
+            console.log(error);
+          })
+    }
+
+    //leer los datos del usuario y alamcenarlos en su variable
     const HandleChange = e =>{
         const {name,value} = e.target
-        SetJornadaSeleccionada((prevState)=>({
+        setUserData((prevState)=>({
             ...prevState,
             [name]:value
         }))
-        console.log(jornadaSeleccionada)
+        //console.log(comunicadoSeleccionado)
     }
 
-    const OpenCLoseModal = ()=>{
-        setModalInsertar(!modalInsertar)
-    }
-    //convertir imagen a b64
-    const [b64,setB64] = useState([])
-
-    const HandleImageUpload = (e) =>{
-        setB64(e)
-    }
-
-    //Metodo get para obtener las jornadas de la DB
-    const GetJornadas = async() =>{
-        await axios.get(baseURL+jornadasURL)
-        .then(response =>{
-            setData(response.data)
-        })
-    }
-
-    //Metodo POST para enviar una nueva Jornada a la DB
-    const PostJornadas = async() =>{
-        var form = new FormData();
-        form.append("descripcion", jornadaSeleccionada.descripcion );
-        form.append("imagen",b64);
-        form.append("METHOD","POST");
-        await axios.post(baseURL+jornadasURL,form,{headers:{'content-type':'multipart/form-data'}})
-        .then(response =>{
-            setData(data.concat(response.data));
-            OpenCLoseModal();
-        })
-    }
-    // almacenar los datos obtenidos del metodo get Jornadas
-    const [data,setData] = useState([])
-    useEffect(()=>{
-        GetJornadas()
-    },[])
-    //reder el cual retorna la lista de la db
-    //botones de editar y eliminar
-    //El modal para editar
-    //es decir un crud basico
     return (
-        <>
-            <div className ="container text-center">
-                <button className = "btn btn-success m-5" onClick = {()=>OpenCLoseModal()}>Insertar</button>
-                <table className ="table">
-                    <thead>
-                        <tr>
-                            <th>Descripción</th>
-                            <th>imagen</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map(jornada =>(
-                            <tr key = {jornada.id}>
-                                <td>{jornada.descripcion}</td>
-                                <td><img src ={jornada.imagen} alt="" className = "image-fluid"/></td>
-                                <td>
-                                    <button className = "btn btn-primary mr-1">Editar</button>
-                                    <button className = "btn btn-danger">Eliminar</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <Modal 
-                show = {modalInsertar}
-                onHide = {()=>OpenCLoseModal()}>
-                    <Modal.Header closeButton>Nuevo Comunicado</Modal.Header>
-                    <Modal.Body>
-                        <div className = "form-group">
-                            <label className = "form-label">Descripción</label>
-                            <br/>
-                            <input className = "form-control mb-3"type = "text" name = "descripcion" onChange  = {HandleChange}></input>
-                            <br/>
-                            <label className = "form-label">Imagen</label>
-                            <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen" onChange  = {(e)=> HandleImageUpload(e.target.file)}></input>
-                        </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <button type="submit" onClick = {()=>PostJornadas()} className ="btn btn-primary">Enviar</button>
-                        <button onClick = {()=>OpenCLoseModal()} className="btn btn-danger">Cancelar</button>
-                    </Modal.Footer>
-                </Modal>
+        <>  
+            <div className="navbar navbar-expand-lg navbar-dark backgroundColor">
+                <div className="mx-2 container-fluid " id = "container-fluid">
+                    <Link className="navbar-brand text-white" to="/">
+                    <img src={logo} alt=""  className=" d-inline-block align-text-center"/>
+                    &emsp;Uruapan
+                    </Link>
+                </div>
             </div>
+            <nav className="navbar navbar-expand-lg py-4 navbar-dark color2">
+                <div className = "text-white">{isLogin?<p>Hola {data.user}</p>:<p>Por favor inicia sesión</p>  }</div>
+            </nav>
+            {isLogin?
+            <>
+                <AdminCarouselDif/>
+                <AdminJornadas/>
+                <AdminComunicados/>
+            </>
+            :
+            <div className ="container ">
+                <div className = "m-50p w-75 shadow-lg p-3 mb-5 bg-body rounded">
+                    <p className = "mb-3 fs-5">Administrador</p>
+                    {loginError? 
+                    <Alert variant = "danger" className = "text-center">
+                        Error: Usuario o contraseña incorrectos
+                    </Alert>: <></>}
+                    <div className= "mb-3">
+                        <label htmlFor="user" className="form-label">Usuario</label>
+                        <input type="text" className="form-control" id="user" name = "user" onChange  = {HandleChange}/>
+                    </div>
+                    <div className= "mb-5">
+                        <label htmlFor="user" className="form-label">Contraseña</label>
+                        <input type="password" className="form-control" id="password" name = "password" onChange  = {HandleChange}/>
+                    </div>
+                    <button className = "w-100 btn btn-primary" onClick = {()=>PostLogin()}>Iniciar Sesión</button>
+                </div>
+            </div>
+            }
+            
             
         </>
     )

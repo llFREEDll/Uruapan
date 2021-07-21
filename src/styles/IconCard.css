@@ -7,16 +7,16 @@
 .animation1:hover  .YellowColor{
     
     color: #f5b40e;
-    font-size: x-small;
+    font-size: x-large;
     transition:font-size .5s ease; 
 }
 .animation1:hover  .pinkColor{
     color: #fb3f94;
-    font-size: x-small;
+    font-size: x-large;
     transition:font-size .5s ease;
 }
 .animation1:hover  .greenColor{
     color: #5cbe0f;
-    font-size: x-small;
+    font-size: x-large;
     transition:font-size .5s ease;
 }

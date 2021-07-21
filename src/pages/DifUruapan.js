@@ -1,14 +1,16 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
-import CasaPamarList from '../components/CasaPamarList'
+import AreasYServiciosList from '../components/AreasYServicios'
 import CarouselDif from '../components/CarouselDif'
 import ComunicadosList from '../components/CominicadosList'
 import JornadasList from '../components/JornadasList'
 import AsistenciaSocialList from '../components/AsistenciaSocialList'
 import ServiciosMedicosList from '../components/ServiciosMedicosList'
 
+
 class DifUruapan extends React.Component{
+    
     componentDidMount(){
         window.scrollTo(0, 0);
     }
@@ -19,7 +21,7 @@ class DifUruapan extends React.Component{
                 <NavBar/>
                 <CarouselDif/>
                 <JornadasList/>
-                <CasaPamarList/>
+                <AreasYServiciosList/>
                 <AsistenciaSocialList/>
                 <ServiciosMedicosList/>
                 <ComunicadosList/>

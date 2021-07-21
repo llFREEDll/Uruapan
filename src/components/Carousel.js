@@ -1,5 +1,5 @@
 import React from 'react'
-import carousel1 from '../assets/carousel1.jpg'
+import carousel1 from '../assets/carrusel5.jpg'
 import carousel2 from '../assets/carousel2.jpg'
 import carousel3 from '../assets/carousel3.jpg'
 import $ from "jquery";
@@ -26,7 +26,7 @@ class  Carousel extends React.Component {
                     <div className="carousel-item active">
                     <img src= {carousel1} className="d-block w-100" alt="..."/>
                     <div className="mt-0 carousel-caption d-md-block">
-                        <h1 ><strong>APOYO</strong></h1>
+                        
                     </div>
                     </div>
                     <div className="carousel-item">

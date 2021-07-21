@@ -18,6 +18,8 @@ class JornadaCard extends React.Component{
   render(){
     return(
         <>
+          {this.props.img !== ""?
+          <>
           <a href = "#a"  className = "col mt-5  d-flex align-items-center" onClick = {()=>{this.HandleModal()}}>
             <div className="card shadow bg-body p-0 rounded border-0 ">
                   <img src = {this.props.img}  className=" img-fluid" alt="..."/>
@@ -31,6 +33,10 @@ class JornadaCard extends React.Component{
               <img src = {this.props.img} className=" img-fluid" alt="..."/>
             </Modal.Body>
           </Modal>
+          </>
+          :
+          <></>
+        }
         </>
         
     )
