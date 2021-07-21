@@ -1,8 +1,8 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
+import NavBar from '../components/general/NavBar'
+import Footer from '../components/general/Footer'
 import ServicioImg from '../assets/servicio1.jpg'
-import JornadasList from '../components/JornadasList'
+import JornadasList from '../components/DIF/JornadasList'
 import DownloadIcon from '../assets/downloadIcon.png'
 import '../styles/Servicios.css'
 

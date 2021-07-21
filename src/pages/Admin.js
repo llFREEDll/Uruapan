@@ -1,10 +1,11 @@
 
 import React,{useState} from 'react'
 
-import AdminJornadas from '../components/AdminJornadas'
-import AdminCarouselDif from '../components/AdminCarouselDif'
-import AdminComunicados from '../components/AdminComunicados'
+import AdminJornadas from '../components/DIF/AdminJornadas'
+import AdminCarouselDif from '../components/DIF/AdminCarouselDif'
+import AdminComunicados from '../components/DIF/AdminComunicados'
 import axios from 'axios'
+import {urls} from '../apiConection/Links'
 import '../styles/Admin.css'
 import md5 from 'md5'
 import logo from '../assets/logo1.png'
@@ -16,8 +17,6 @@ import { Alert } from 'react-bootstrap'
 // ver, editar, crear, eliminar los componentes de la
 // aplicacion
 const Admin = () => {
-
-    const baseURL = "http://localhost:801/uruapan-api/login.php"
 
     //manejador para saber si esta logueado o no
     const [isLogin,setIsLogin] = useState(false)
@@ -43,7 +42,7 @@ const Admin = () => {
         form.append("user", userData.user );
         form.append("password",md5(userData.password) );
         form.append("METHOD","POST");
-        await axios.post(baseURL,form)
+        await axios.post(urls.login,form)
         .then(response =>{
             if(response.data === "Login error"){
                 setIsLogin(false);

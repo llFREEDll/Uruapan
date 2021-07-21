@@ -1,9 +1,9 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
-import Carousel from '../components/Carousel'
-import Card from '../components/Card'
-import Footer from '../components/Footer'
-import BgImageCardList from '../components/BgImageCardList'
+import NavBar from '../components/general/NavBar'
+import Carousel from '../components/mainPage/Carousel'
+import Card from '../components/general/Card'
+import Footer from '../components/general/Footer'
+import BgImageCardList from '../components/mainPage/BgImageCardList'
 
 import pamarImg from '../assets/PAMAR.jpg'
 import asistenciaSocialImg from '../assets/asistenciaSocial.jpg'
@@ -61,6 +61,13 @@ const Main = ()=>(
         </div>
 
         <BgImageCardList/>
+        <div className = "p-5 bg-primary text-white ">
+                <div className = "container-fluid py-5 text-center">
+                    <h1 className = "py-3 display-5 fw-bold">Pagos en línea</h1>
+                    <p className="fs-4 py-3">Realiza tus pagos en línea como, pago de servicio de agua (CAPASU), Pago de multas, pago de predial</p>
+                    <Link to = "/tramites-en-linea" className="py-3 btn  btn-outline-light btn-lg">Pagar en línea</Link>    
+                </div>
+            </div>
 
         <Footer/>
     </div>

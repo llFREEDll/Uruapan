@@ -1,12 +1,12 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
-import AreasYServiciosList from '../components/AreasYServicios'
-import CarouselDif from '../components/CarouselDif'
-import ComunicadosList from '../components/CominicadosList'
-import JornadasList from '../components/JornadasList'
-import AsistenciaSocialList from '../components/AsistenciaSocialList'
-import ServiciosMedicosList from '../components/ServiciosMedicosList'
+import NavBar from '../components/general/NavBar'
+import Footer from '../components/general/Footer'
+import AreasYServiciosList from '../components/DIF/AreasYServicios'
+import CarouselDif from '../components/DIF/CarouselDif'
+import ComunicadosList from '../components/DIF/CominicadosList'
+import JornadasList from '../components/DIF/JornadasList'
+import AsistenciaSocialList from '../components/DIF/AsistenciaSocialList'
+import ServiciosMedicosList from '../components/DIF/ServiciosMedicosList'
 
 
 class DifUruapan extends React.Component{

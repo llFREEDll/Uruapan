@@ -5,6 +5,7 @@ export const urls = {
     carouselDif : base + "/carousel-dif-table.php",
     jornadasDif: base + "/jornadas-table.php",
     comunicadosDif: base + "/comunicados-table.php",
-    imagenJornadasDif: base + "/jornadas-imagen-table.php"
+    imagenJornadasDif: base + "/jornadas-imagen-table.php",
+    login :base + "/login.php"
     
 }
