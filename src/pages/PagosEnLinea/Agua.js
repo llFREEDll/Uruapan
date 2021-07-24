@@ -5,8 +5,7 @@ import PayPalButtons from '../../components/PagosEnLinea/PayPalButtons'
 import {Form,Row,Col,FloatingLabel,Alert } from 'react-bootstrap'
 const Agua = () =>{
 
-    const [datosCorrectos,setDatosCorrectos] = useState(false)
-    const [errorDetectado,setErrorDetectado] = useState([])
+    //const [datosCorrectos,setDatosCorrectos] = useState(false)
     const tipoDeZona = {
         zona1:{
             name : "Popular",
@@ -29,6 +28,7 @@ const Agua = () =>{
         name: "",
         address: "",
         toma: "",
+        email: "",
         zona: tipoDeZona.zona1.name,
         amount: tipoDeZona.zona1.amount
     })
@@ -48,57 +48,69 @@ const Agua = () =>{
                 amount:monto
             }))
     }
-    const HandleChange = e =>{
-        const {name,value} = e.target
+    const HandleNameChange = e =>{
+        const {value} = e.target
             setDatosIngresados((prevState)=>({
                 ...prevState,
-                [name]:value
+                name:value
             }))
     }
-
-    const InputDone = () =>{
-        let listAux = []
-        if(datosIngresados.name === "")
-            listAux.push({error: "Campo nombre vacío"}) 
-            
-        if(datosIngresados.address === "")
-            listAux.push({error: "Campo domicilio vacío"}) 
-            
-        if(datosIngresados.toma === "")
-            listAux.push({error: "Campo N. de toma vacío"}) 
+    const HandleAddressChange = e =>{
+        const {value} = e.target
+            setDatosIngresados((prevState)=>({
+                ...prevState,
+                address:value
+            }))
+    }
+    const HandleTomaChange = e =>{
+        const {value} = e.target
+        if (value.length === 6 && !isNaN(value))
+            setDatosIngresados((prevState)=>({
+                ...prevState,
+                toma:value
+            }))
         else 
-            if(datosIngresados.toma.length !== 6 || isNaN(datosIngresados.toma))
-                listAux.push({error: "Campo N. de toma incorrecto"}) 
-
-        if(datosIngresados.zona === "")
-            listAux.push({error: "Campo zona vacío"}) 
-
-        if(datosIngresados.amount === "")
-            listAux.push({error: "Campo monto a pagar vacío"}) 
-        
-        setErrorDetectado(listAux)
-        if(listAux.length === 0){
-            setDatosCorrectos(true);
-        }
-        else{
-            setDatosCorrectos(false);
-        }
-
+            setDatosIngresados((prevState)=>({
+                ...prevState,
+                toma:""
+            }))
+    }
+    const HandleEmailChange = e =>{
+        const {value} = e.target
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(value.match(mailformat))
+            {
+                setDatosIngresados((prevState)=>({
+                    ...prevState,
+                    email:value
+                }))
+            }
+            else
+            {
+                setDatosIngresados((prevState)=>({
+                    ...prevState,
+                    email:""
+                }))
+            }
     }
     return(
         <div>
             <NavBar/>
-            <Row className="g-2 mb-3" >
+            <Row>
                 <Col md>
-                    <div className = "container my-5">
+                <div className="container">
+                    <div className = " my-5">
                         <FloatingLabel className = "mb-3" controlId="floatingInputGrid" label="Nombre ">
-                            <Form.Control type="text" placeholder="Nombre Apellido" name = "name" onChange  = {HandleChange}/>
+                            <Form.Control type="text" placeholder="Nombre Apellido" onChange  = {HandleNameChange}/>
                         </FloatingLabel>
                         <FloatingLabel className = "mb-3" controlId="floatingInputGrid2" label="Domicilio">
-                            <Form.Control className = "mb-3" type="text" placeholder="Calle # Col." name = "address" onChange  = {HandleChange}/>
+                            <Form.Control className = "mb-3" type="text" placeholder="Calle # Col." onChange  = {HandleAddressChange}/>
                         </FloatingLabel>
                         <FloatingLabel className = "mb-3" controlId="floatingInputGrid3" label="No. de toma">
-                            <Form.Control type="number" placeholder="124343432" name = "toma" onChange = {HandleChange}/>
+                            <Form.Control type="number" placeholder="124343432" onChange = {HandleTomaChange}/>
+                        </FloatingLabel>
+                        <FloatingLabel className = "mb-3" controlId="floatingInputGrid3" label="Correo Electrónico">
+                            <Form.Control type="email" placeholder="something@example.com"  onChange = {HandleEmailChange}/>
                         </FloatingLabel>
 
                         <Row className="g-2 mb-3" >
@@ -120,32 +132,27 @@ const Agua = () =>{
                             
                         </Row>
                     </div>
+                    </div>
                 </Col>
-                <Col md>
-                    <div className = "container my-5"></div>
-                    {datosCorrectos? 
+                
+                
+                <Col md className = " my-5">
+                    <div className = "container">
+                    {datosIngresados.name !== ""  && datosIngresados.address !== ""
+                    && datosIngresados.toma !== "" && datosIngresados.email !== ""
+                    && datosIngresados.zona !== "" && datosIngresados.amount !== "" ?  
                                 <PayPalButtons/>
                                 :
-                                <div>
-                                    
-                                    <div className = "col w-100 text-center">
-                                    {errorDetectado.length > 0?
-                                        <Alert variant="danger">
-                                            {errorDetectado.map((item) =>(
-                                                <p key = {item.error}>{item.error}</p>
-                                            ))}
-                                        </Alert>
-                                        :
-                                        <Alert variant="info">
-                                            Rellena todos los datos para realizar tu pago, recuerda que estos datos los puedes encontrar en el recibo de pago de CAPASU
-                                        </Alert>
-                                        }
-                                        <button className="border-0 w-50 text-decoration-none btnRedColor btn-lg btn-danger" onClick = {InputDone}>Pagar</button>
-                                    </div>
+                                <div className = "col w-100 text-center">
+                                    <Alert variant="info">
+                                        Rellena todos los datos para realizar tu pago, recuerda que estos datos los puedes encontrar en el recibo de pago de CAPASU
+                                    </Alert>
                                 </div>
                                 
                             }
+                    </div>
                 </Col>
+                
             </Row>
             
             
