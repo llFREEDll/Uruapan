@@ -6,6 +6,7 @@ export const urls = {
     jornadasDif: base + "/jornadas-table.php",
     comunicadosDif: base + "/comunicados-table.php",
     imagenJornadasDif: base + "/jornadas-imagen-table.php",
-    login :base + "/login.php"
-    
+    login :base + "/login.php",
+    pagosCapasu: base + "/pagos-capasu-table.php",
+    loginCapasu: base + "/login-capasu.php"
 }

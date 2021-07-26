@@ -1,5 +1,29 @@
+import axios from 'axios';
 import React,{useRef,useEffect} from 'react'
-const PayPalButtons = () =>{
+import { urls } from '../../apiConection/Links';
+
+
+const PayPalButtons = (props) =>{
+    const PostPayment = async() =>{
+        var form = new FormData();
+        let fecha = new Date()
+        form.append("date", fecha.getFullYear() + "-" + (fecha.getMonth()+1) + "-" + fecha.getDate())
+        form.append("name",props.data.name);
+        form.append("toma",props.data.toma);
+        form.append("address",props.data.address);
+        form.append("email",props.data.email);
+        form.append("zona",props.data.zona);
+        form.append("amount",props.data.amount);
+        form.append("METHOD","POST");
+        await axios.post(urls.pagosCapasu,form,{headers:{'content-type':'multipart/form-data'}})
+        .then(response =>{
+            alert("pago realizado a la toma no. " + response.data.toma +
+                " a nombre " + response.data.name + " Pago total: $" + response.data.amount);
+            
+        }).catch(error=>{
+            console.log(error);
+          })
+}
     const paypal = useRef()
     useEffect (()=>{
         window.paypal.Buttons({
@@ -25,7 +49,8 @@ const PayPalButtons = () =>{
             },
             onApprove: async (data,actions)=>{
                 const order = await actions.order.capture()
-                console.log("Orden Exitosa" + order)
+                PostPayment()
+                
             },
             onError: (err) =>{
                 console.log(err)

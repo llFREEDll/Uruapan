@@ -4,6 +4,7 @@ import Admin from './pages/Admin';
 import DifUruapan from './pages/DifUruapan';
 import Main from './pages/Main'
 import Agua from './pages/PagosEnLinea/Agua';
+import AguaAdmin from './pages/PagosEnLinea/AguaAdmin';
 import PagosEnLinea from './pages/PagosEnLinea/PagosEnLinea';
 import Servicios from './pages/Servicios';
 
@@ -29,6 +30,7 @@ class App extends React.Component {
           <Route exact path = "/admin" component = {Admin}/>
           <Route exact path = "/tramites-en-linea" component = {PagosEnLinea}/>
           <Route exact path = "/tramites-en-linea/Agua" component = {Agua}/>
+          <Route exact path = "/Admin-capasu" component = {AguaAdmin}/>
         </Switch> 
       </Router>
     )

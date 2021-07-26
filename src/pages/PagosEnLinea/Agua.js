@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Footer from '../../components/general/Footer'
 import NavBar from '../../components/general/NavBar'
 import PayPalButtons from '../../components/PagosEnLinea/PayPalButtons'
+import CapasuLogo from '../../assets/capasuLogo.png'
 import {Form,Row,Col,FloatingLabel,Alert } from 'react-bootstrap'
 const Agua = () =>{
 
@@ -96,6 +97,9 @@ const Agua = () =>{
     return(
         <div>
             <NavBar/>
+            <div className = "text-center">
+                <img src = {CapasuLogo} alt= "..." className = "image-fluid" ></img>
+            </div>
             <Row>
                 <Col md>
                 <div className="container">
@@ -136,17 +140,21 @@ const Agua = () =>{
                 </Col>
                 
                 
-                <Col md className = " my-5">
+                <Col md className = "w-50 my-5">
                     <div className = "container">
                     {datosIngresados.name !== ""  && datosIngresados.address !== ""
                     && datosIngresados.toma !== "" && datosIngresados.email !== ""
                     && datosIngresados.zona !== "" && datosIngresados.amount !== "" ?  
-                                <PayPalButtons/>
+                                <PayPalButtons data= {datosIngresados}/>
                                 :
                                 <div className = "col w-100 text-center">
                                     <Alert variant="info">
                                         Rellena todos los datos para realizar tu pago, recuerda que estos datos los puedes encontrar en el recibo de pago de CAPASU
                                     </Alert>
+                                    <Alert variant="warning">
+                                        Una vez realizado, tu pago se verá reflejado en no más de tres días hábiles
+                                    </Alert>
+
                                 </div>
                                 
                             }

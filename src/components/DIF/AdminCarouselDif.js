@@ -2,7 +2,7 @@ import axios from 'axios'
 import React,{useState,useEffect} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {urls} from '../../apiConection/Links'
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Table } from 'react-bootstrap';
 
 const AdminCarouselDif = () => {
     // estados 
@@ -148,7 +148,7 @@ const AdminCarouselDif = () => {
                 <h1>Carrusel DIF Uruapan <button className = "btn btn-success m-5" onClick = {()=>OpenCLoseModalInsertar()}>Nueva Imagen de Carrusel</button></h1>
                 {data !== [] ?
                 <>
-                <table className ="table">
+                <Table striped bordered hover responsive>
                     <thead>
                         <tr>
                             <th>Título</th>
@@ -168,7 +168,7 @@ const AdminCarouselDif = () => {
                             </tr>
                         ))}
                     </tbody>
-                </table>
+                </Table>
                 <Modal 
                 show = {modalInsertar}
                 onHide = {()=>OpenCLoseModalInsertar()}>

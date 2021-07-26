@@ -2,7 +2,7 @@ import axios from 'axios'
 import React,{useState,useEffect} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {urls} from '../../apiConection/Links'
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Table } from 'react-bootstrap';
 
 const AdminComunicados = () => {
     // estados 
@@ -158,7 +158,7 @@ const AdminComunicados = () => {
                 <h1>Comunicados DIF Uruapan <button className = "btn btn-success m-5" onClick = {()=>OpenCLoseModalInsertar()}>Nuevo cominicado</button></h1>
                 {data !== [] ?
                 <>
-                <table className ="table">
+                <Table striped bordered hover responsive>
                     <thead>
                         <tr>
                             <th>Título</th>
@@ -182,7 +182,7 @@ const AdminComunicados = () => {
                             </tr>
                         ))}
                     </tbody>
-                </table>
+                </Table>
                 <Modal 
                 show = {modalInsertar}
                 onHide = {()=>OpenCLoseModalInsertar()}>
