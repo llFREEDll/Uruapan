@@ -4,6 +4,7 @@ import '../../styles/CardLogoDownLine.css'
 class CardLogoDownLine extends React.Component{
     render(){
         return(
+            <div className = "container my-5">
                 <div className = "col animation1">
                     <Link to ={this.props.Link} className="card h-100 border-0 text-decoration-none text-dark" >
                         <div className="row d-flex align-items-center ">
@@ -17,7 +18,7 @@ class CardLogoDownLine extends React.Component{
                     </Link>
                     <div className = "DownLine"></div>
                 </div>
-            
+            </div>
         )
     }
 }
