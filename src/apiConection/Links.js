@@ -8,5 +8,6 @@ export const urls = {
     imagenJornadasDif: base + "/jornadas-imagen-table.php",
     login :base + "/login.php",
     pagosCapasu: base + "/pagos-capasu-table.php",
-    loginCapasu: base + "/login-capasu.php"
+    loginCapasu: base + "/login-capasu.php",
+    licenciaComercial: base + "/licencia-comercial-table.php"
 }

@@ -25,15 +25,14 @@ class LicenciaComercial extends React.Component{
                                 <ListGroup.Item action variant = "dark">* Solicitud firmada por el titular o representante legal</ListGroup.Item>
                                 <ListGroup.Item action>* Original o copia de identificación oficial del titular o representante legal</ListGroup.Item>
                                 <ListGroup.Item action variant = "dark">* Identificación oficial de la persona que realiza el trámite </ListGroup.Item>
-                                <ListGroup.Item action >* Identificación oficial de la persona que realiza el trámite </ListGroup.Item>
-                                <ListGroup.Item action variant = "dark">* R.F.C. con domicilio y actividad comercial actualizado</ListGroup.Item>
-                                <ListGroup.Item action >* Contrato de arrendamiento o comodato vigente</ListGroup.Item>
-                                <ListGroup.Item action variant = "dark">* Comprobante de domicilio del local no mayor a 4 meses de antigüedad (CFE, Agua, teléfono o predial)</ListGroup.Item>
-                                <ListGroup.Item action >* Recibo predial vigente </ListGroup.Item>
-                                <ListGroup.Item action variant = "dark">* Recibo de agua vigente</ListGroup.Item>
-                                <ListGroup.Item action >* Verificación de inspectores varios ramos </ListGroup.Item>
-                                <ListGroup.Item action variant = "dark">* Dictamen de protección civil vigente </ListGroup.Item>
-                                <ListGroup.Item action >* INE del arrendador o comodante </ListGroup.Item>
+                                <ListGroup.Item action >* R.F.C. con domicilio y actividad comercial actualizado</ListGroup.Item>
+                                <ListGroup.Item action variant = "dark">* Contrato de arrendamiento o comodato vigente</ListGroup.Item>
+                                <ListGroup.Item action >* Comprobante de domicilio del local no mayor a 4 meses de antigüedad (CFE, Agua, teléfono o predial)</ListGroup.Item>
+                                <ListGroup.Item action variant = "dark">* Recibo predial vigente </ListGroup.Item>
+                                <ListGroup.Item action >* Recibo de agua vigente</ListGroup.Item>
+                                <ListGroup.Item action variant = "dark">* Verificación de inspectores varios ramos </ListGroup.Item>
+                                <ListGroup.Item action >* Dictamen de protección civil vigente </ListGroup.Item>
+                                <ListGroup.Item action variant = "dark">* INE del arrendador o comodante </ListGroup.Item>
 
                             </ListGroup> 
 

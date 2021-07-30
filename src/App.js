@@ -8,6 +8,7 @@ import AguaAdmin from './pages/PagosEnLinea/AguaAdmin';
 import LicenciaComercial from './pages/PagosEnLinea/LicenciaComercial';
 import PagosEnLinea from './pages/PagosEnLinea/PagosEnLinea';
 import Servicios from './pages/Servicios';
+import VentanillaUnica from './pages/VentanillaUnica/VentanillaUnica';
 
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
           <Route exact path = "/tramites-en-linea/Agua" component = {Agua}/>
           <Route exact path = "/Admin-capasu" component = {AguaAdmin}/>
           <Route exact path = "/tramites-en-linea/licencia-comercial" component = {LicenciaComercial}/> 
+          <Route exact path = "/ventanilla-unica" component = {VentanillaUnica}/> 
         </Switch> 
       </Router>
     )

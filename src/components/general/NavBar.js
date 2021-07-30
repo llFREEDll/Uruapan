@@ -28,6 +28,7 @@ const NavBar = () =>(
                     <a className="nav-link text-white" aria-current="page"  rel= "noreferrer" target="_blank" href="https://transparenciauruapan.gob.mx/">Transparencia</a>
                     <Link className="nav-link text-white" aria-current="page" to="/tramites-en-linea">Tramites en línea</Link>
                     <Link className="nav-link text-white" aria-current="page" to="/agm">AGM</Link>
+                    <Link className="nav-link text-white" aria-current="page" to="/ventanilla-unica">Ventanilla Única</Link>
                 </div>
                 </div>
             </div>
