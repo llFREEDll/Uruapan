@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Footer from '../../components/general/Footer'
 import NavBar from '../../components/general/NavBar'
 import PayPalButtons from '../../components/PagosEnLinea/PayPalButtons'
-import CapasuLogo1 from '../../assets/capasuLogo2.jpg'
+import CapasuLg from '../../assets/capasuLogo.png'
 import {Form,Row,Col,FloatingLabel,Alert } from 'react-bootstrap'
 const Agua = () =>{
 
@@ -97,8 +97,9 @@ const Agua = () =>{
     return(
         <div>
             <NavBar/>
-            <div className = "text-center">
-                <img src = {CapasuLogo1} alt= "..." className = "image-fluid" ></img>
+            
+            <div className = "container text-center">
+            <img src={CapasuLg} className="image-fluid" alt=""/>
             </div>
             <Row>
                 <Col md>

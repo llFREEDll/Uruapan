@@ -1,5 +1,4 @@
 import React from 'react'
-import "jquery-ui/ui/effects/effect-size"
 import { Link } from 'react-router-dom';
 
 //Componente que muestra una tarjeta con un icono a la izquierda

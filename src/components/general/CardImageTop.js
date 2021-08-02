@@ -6,7 +6,7 @@ class CardImageTop extends React.Component{
     render(){
         return (
             <Col >
-                <a  className = "text-dark fw-bold text-uppercase text-decoration-none" href={this.props.Link}>
+                <a  className = "text-dark fw-bold text-uppercase text-decoration-none" rel= "noreferrer" target="_blank" href={this.props.Link}>
                     <Card className = "shadow p-3 mb-5 bg-body rounded">
                         <Card.Img  variant="top" src={this.props.img}/>
                         <Card.Body>

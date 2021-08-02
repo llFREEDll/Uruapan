@@ -1,8 +1,6 @@
 import React from 'react'
 import {urls} from '../../apiConection/Links'
-import $ from "jquery";
 import axios from 'axios'   
-import "jquery-ui/ui/effects/effect-slide"
 import Carousel from "react-bootstrap/Carousel"
 import { Spinner } from 'react-bootstrap';
 
@@ -18,7 +16,6 @@ class  CarouselDif extends React.Component {
     
     componentDidMount(){
         this.GetItems()
-        $('.carousel').effect('slide',500);
 
     }
     

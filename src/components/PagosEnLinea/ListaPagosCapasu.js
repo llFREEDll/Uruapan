@@ -21,9 +21,10 @@ const ListaPagosCapasu = () =>{
         GetItems()
         
     },[])
+
     const exportToExcel = () =>{
         const table2excel = new Table2Excel();
-        table2excel.export(document.getElementById("CapasuTable"),"CapasuPagos")
+        table2excel.export(document.querySelectorAll("#CapasuTable"));
     }
     return (
         <>
