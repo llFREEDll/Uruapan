@@ -49,6 +49,7 @@ const PayPalButtons = (props) =>{
             },
             onApprove: async (data,actions)=>{
                 const order = await actions.order.capture()
+                console.log(order)
                 PostPayment()
                 
             },
@@ -56,7 +57,7 @@ const PayPalButtons = (props) =>{
                 console.log(err)
             }
         }).render(paypal.current)
-    },[])
+    })
     return (
 
                 <div className = "text-center" ref= {paypal}>

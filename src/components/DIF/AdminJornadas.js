@@ -388,7 +388,7 @@ const AdminJornadas = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen1" onChange  = {(e)=> HandleImageUpload(e.target.files,1)}></input>
+                            <input className = "form-control mb-3"type = "file" accept="image/png, image/jpeg" name = "imagen1" onChange  = {(e)=> HandleImageUpload(e.target.files,1)}></input>
                         </div>
                         <hr className = "dropdown-divider"/>
                         <hr className = "dropdown-divider"/>
@@ -399,7 +399,7 @@ const AdminJornadas = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen2" onChange  = {(e)=> HandleImageUpload(e.target.files,2)}></input>
+                            <input className = "form-control mb-3"type = "file" accept="image/png, image/jpeg" name = "imagen2" onChange  = {(e)=> HandleImageUpload(e.target.files,2)}></input>
                         </div>
                         <hr className = "dropdown-divider"/>
                         <hr className = "dropdown-divider"/>
@@ -410,7 +410,7 @@ const AdminJornadas = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen3" onChange  = {(e)=> HandleImageUpload(e.target.files,3)}></input>
+                            <input className = "form-control mb-3"type = "file"  accept="image/png, image/jpeg" name = "imagen3" onChange  = {(e)=> HandleImageUpload(e.target.files,3)}></input>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
@@ -431,7 +431,7 @@ const AdminJornadas = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen1" onChange  = {(e)=> HandleJornadaImage(e.target.files)}></input>                            
+                            <input className = "form-control mb-3"type = "file" accept="image/png, image/jpeg" name = "imagen1" onChange  = {(e)=> HandleJornadaImage(e.target.files)}></input>                            
                             <div className = "text-center">
                             <button className = "btn btn-primary m-1" onClick = {()=>PutJornadas(jornadaSeleccionada,1)}>Actualizar</button>
                             <button className = "btn btn-danger m-1" onClick ={()=>ConfirmarElimancion(jornadaSeleccionada,1)}>Eliminar</button>
@@ -447,7 +447,7 @@ const AdminJornadas = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen2" onChange  = {(e)=> HandleJornadaImage(e.target.files)}></input>
+                            <input className = "form-control mb-3"type = "file" accept="image/png, image/jpeg" name = "imagen2" onChange  = {(e)=> HandleJornadaImage(e.target.files)}></input>
                             <div className = "text-center">
                             <button className = "btn btn-primary m-1" onClick ={()=>PutJornadas(jornadaSeleccionada,2)}>Actualizar</button>
                             <button className = "btn btn-danger m-1" onClick ={()=>ConfirmarElimancion(jornadaSeleccionada,2)}>Eliminar</button>
@@ -463,7 +463,7 @@ const AdminJornadas = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen3" onChange  = {(e)=> HandleJornadaImage(e.target.files)}></input>
+                            <input className = "form-control mb-3"type = "file" accept="image/png, image/jpeg" name = "imagen3" onChange  = {(e)=> HandleJornadaImage(e.target.files)}></input>
                             <div className = "text-center">
                             <button className = "btn btn-primary m-1" onClick ={()=>PutJornadas(jornadaSeleccionada,3)}>Actualizar</button>
                             <button className = "btn btn-danger m-1" onClick ={()=>ConfirmarElimancion(jornadaSeleccionada,3)}>Eliminar</button>

@@ -5,13 +5,13 @@ import { Alert } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { urls } from '../../apiConection/Links'
 import logo from '../../assets/logo1.png'
-import ListaPagosCapasu from '../../components/PagosEnLinea/ListaPagosCapasu'
+import ListaPagosLicenciaComercial from '../../components/PagosEnLinea/ListaPagosLicenciaComercial'
 
-const AguaAdmin = () =>{
+const AdminLicenciasComercial = () =>{
     const [data,setData] = useState([])
     const [isLogin,setIsLogin] = useState(false)
     const [loginError,setLoginError] = useState(false)
-    //manejador para almacenar los datos del usuario
+
     const [userData,setUserData] = useState({
         id:0,
         user : "",
@@ -24,7 +24,7 @@ const AguaAdmin = () =>{
         form.append("user", userData.user );
         form.append("password",md5(userData.password) );
         form.append("METHOD","POST");
-        await axios.post(urls.loginCapasu,form)
+        await axios.post(urls.loginLC,form)
         .then(response =>{
             if(response.data === "Login error"){
                 setIsLogin(false);
@@ -54,8 +54,7 @@ const AguaAdmin = () =>{
         }))
         //console.log(comunicadoSeleccionado)
     }
- 
-    return(
+    return (
         <>
             <div className="navbar navbar-expand-lg navbar-dark backgroundColor">
                 <div className="mx-2 container-fluid " >
@@ -70,7 +69,7 @@ const AguaAdmin = () =>{
             </nav>
             {isLogin?
             <>
-                <ListaPagosCapasu/>
+                <ListaPagosLicenciaComercial/>
             </>
             :
             <div className ="container ">
@@ -91,9 +90,8 @@ const AguaAdmin = () =>{
                     <button className = "w-100 btn btn-primary" onClick = {()=>PostLogin()}>Iniciar Sesión</button>
                 </div>
             </div>
-            }
+            }            
         </>
     )
 }
-
-export default AguaAdmin
+export default AdminLicenciasComercial

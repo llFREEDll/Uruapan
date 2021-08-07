@@ -195,7 +195,7 @@ const AdminComunicados = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen" onChange  = {(e)=> HandleImageUpload(e.target.files)}></input>
+                            <input className = "form-control mb-3"type = "file" accept="image/png, image/jpeg" name = "imagen" onChange  = {(e)=> HandleImageUpload(e.target.files)}></input>
                             <br/>
                             <label className = "form-label">Contenido</label>
                             <br/>
@@ -224,7 +224,7 @@ const AdminComunicados = () => {
                             <br/>
                             <label className = "form-label">Imagen</label>
                             <br/>
-                            <input className = "form-control mb-3"type = "file" name = "imagen" onChange  = {(e)=> HandleImageUpload(e.target.files)}></input>
+                            <input className = "form-control mb-3"type = "file" accept="image/png, image/jpeg"  name = "imagen" onChange  = {(e)=> HandleImageUpload(e.target.files)}></input>
                             <br/>
                             <label className = "form-label">Contenido</label>
                             <br/>

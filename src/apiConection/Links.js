@@ -2,12 +2,16 @@
 const base = "http://uruapandifapi-com.stackstaging.com/"
 
 export const urls = {
-    carouselDif : base + "/carousel-dif-table.php",
-    jornadasDif: base + "/jornadas-table.php",
-    comunicadosDif: base + "/comunicados-table.php",
-    imagenJornadasDif: base + "/jornadas-imagen-table.php",
-    login :base + "/login.php",
-    pagosCapasu: base + "/pagos-capasu-table.php",
-    loginCapasu: base + "/login-capasu.php",
-    licenciaComercial: base + "/licencia-comercial-table.php"
+    carouselDif : base + "carousel-dif-table.php",
+    comunicadosDif: base + "comunicados-table.php",
+    jornadasDif: base + "jornadas-table.php",
+    imagenJornadasDif: base + "jornadas-imagen-table.php",
+    login :base + "login.php",
+
+    pagosCapasu: base + "pagos-capasu-table.php",
+    loginCapasu: base + "login-capasu.php",
+    
+    licenciaComercial: base + "licencia-comercial-table.php",
+    loginLC: base + "login-lc.php",
+    descargarLC: base + "licencia-comercial-descargar.php"
 }

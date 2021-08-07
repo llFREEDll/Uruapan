@@ -1,5 +1,5 @@
 import React from 'react'
-import { Accordion, Col, Form, ListGroup, Row} from 'react-bootstrap';
+import { Accordion,ListGroup} from 'react-bootstrap';
 import Footer from '../../components/general/Footer';
 import NavBar from '../../components/general/NavBar';
 import LicenciasComercialesInput from '../../components/PagosEnLinea/LicenciaComercialInputs';

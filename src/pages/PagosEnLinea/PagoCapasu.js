@@ -4,7 +4,8 @@ import NavBar from '../../components/general/NavBar'
 import PayPalButtons from '../../components/PagosEnLinea/PayPalButtons'
 import CapasuLg from '../../assets/capasuLogo.png'
 import {Form,Row,Col,FloatingLabel,Alert } from 'react-bootstrap'
-const Agua = () =>{
+
+const PagoCapasu = () =>{
 
     //const [datosCorrectos,setDatosCorrectos] = useState(false)
     const tipoDeZona = {
@@ -78,7 +79,7 @@ const Agua = () =>{
     }
     const HandleEmailChange = e =>{
         const {value} = e.target
-        var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var mailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if(value.match(mailformat))
             {
                 setDatosIngresados((prevState)=>({
@@ -162,12 +163,10 @@ const Agua = () =>{
                     </div>
                 </Col>
                 
-            </Row>
-            
-            
+            </Row>            
             <Footer/>            
         </div>
     )
 }
 
-export default Agua
+export default PagoCapasu
