@@ -1,19 +1,24 @@
 import axios from 'axios';
-import React,{useRef,useEffect} from 'react'
+import React from 'react'
 import { urls } from '../../apiConection/Links';
 
 
-const PayPalButtons = (props) =>{
-    const PostPayment = async() =>{
+class PayPalButtonsAgua extends React.Component{
+    
+    state = {
+        paypal : React.createRef()
+   }
+
+    async PostPayment(){
         var form = new FormData();
         let fecha = new Date()
         form.append("date", fecha.getFullYear() + "-" + (fecha.getMonth()+1) + "-" + fecha.getDate())
-        form.append("name",props.data.name);
-        form.append("toma",props.data.toma);
-        form.append("address",props.data.address);
-        form.append("email",props.data.email);
-        form.append("zona",props.data.zona);
-        form.append("amount",props.data.amount);
+        form.append("name",this.props.data.name);
+        form.append("toma",this.props.data.toma);
+        form.append("address",this.props.data.address);
+        form.append("email",this.props.data.email);
+        form.append("zona",this.props.data.zona);
+        form.append("amount",this.props.data.amount);
         form.append("METHOD","POST");
         await axios.post(urls.pagosCapasu,form,{headers:{'content-type':'multipart/form-data'}})
         .then(response =>{
@@ -24,8 +29,7 @@ const PayPalButtons = (props) =>{
             console.log(error);
           })
 }
-    const paypal = useRef()
-    useEffect (()=>{
+    componentDidMount(){
         window.paypal.Buttons({
             style: {
                 layout: 'vertical',
@@ -50,21 +54,23 @@ const PayPalButtons = (props) =>{
             onApprove: async (data,actions)=>{
                 const order = await actions.order.capture()
                 console.log(order)
-                PostPayment()
+                this.PostPayment()
                 
             },
             onError: (err) =>{
                 console.log(err)
             }
-        }).render(paypal.current)
-    })
-    return (
+        }).render(this.state.paypal.current)
+    }
+    render(){
+        return (
 
-                <div className = "text-center" ref= {paypal}>
+            <div className = "text-center" ref= {this.state.paypal}>
 
-                </div>
-        
-        )
+            </div>
+    )
+    }
+    
 }
 
-export default PayPalButtons
+export default PayPalButtonsAgua

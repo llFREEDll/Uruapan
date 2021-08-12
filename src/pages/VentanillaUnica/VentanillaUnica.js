@@ -16,7 +16,7 @@ class VentanillaUnica extends React.Component{
             <div>
                 <NavBar/>
                 <div className = "container my-5 text-center">
-                    <h1> Ventanilla Únuica</h1>
+                    <h1> Ventanilla Única</h1>
                     <p className = "mb-5"> Pide una cita para realizar un trámite sin importar la dependencia donde te encuentres.
                     <br/>Ve los horarios disponibles y escoge el que se adapte a ti.
                     <br/>Nuestros funcionarios están para atenderte. </p>

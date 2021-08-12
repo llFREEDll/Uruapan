@@ -97,7 +97,7 @@ const ListaPagosLicenciaComercial = () =>{
     return (
         <>
             <div className ="container text-center">
-                <h1>Lista de pagos </h1>
+                <h1 className = "my-5">Solicitudes</h1>
                 {data.length > 0 ?
                 <>
                 <Table id = "CapasuTable" striped bordered hover responsive>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Footer from '../../components/general/Footer'
 import NavBar from '../../components/general/NavBar'
-import PayPalButtons from '../../components/PagosEnLinea/PayPalButtons'
+import Modal from 'react-bootstrap/Modal'
 import CapasuLg from '../../assets/capasuLogo.png'
 import {Form,Row,Col,FloatingLabel,Alert } from 'react-bootstrap'
+import RevisarInputsAgua from '../../components/PagosEnLinea/RevisarInputsAgua'
+import PayPalButtonsAgua from '../../components/PagosEnLinea/PayPalButtonsAgua'
 
 const PagoCapasu = () =>{
 
@@ -26,6 +28,8 @@ const PagoCapasu = () =>{
             amount: "3400.00"
         }
     }
+    const [PaypalBtns,setPaypalBtns] = useState(false);
+    const [modalConfirmarDatos,setModalConfirmarDatos] = useState(false)
     const [datosIngresados,setDatosIngresados] = useState({
         name: "",
         address: "",
@@ -34,8 +38,25 @@ const PagoCapasu = () =>{
         zona: tipoDeZona.zona1.name,
         amount: tipoDeZona.zona1.amount
     })
+    const [error,setError] = useState(
+        {
+            name: false,
+            address:false,
+            email:false,
+            toma:false,
+            zona:false,
+            amount:false
+
+        });
     const HandleZonaChange = e =>{
+        
         const {value} = e.target
+
+        setError((prevState)=>({
+            ...prevState,
+            zona:true
+        }));
+        
         var monto = 0
         if(value === tipoDeZona.zona1.name)
             monto = tipoDeZona.zona1.amount
@@ -51,21 +72,43 @@ const PagoCapasu = () =>{
             }))
     }
     const HandleNameChange = e =>{
+        
         const {value} = e.target
-            setDatosIngresados((prevState)=>({
-                ...prevState,
-                name:value
-            }))
+
+        setError((prevState)=>({
+            ...prevState,
+            name:true
+        }));
+
+        setDatosIngresados((prevState)=>({
+            ...prevState,
+            name:value
+        }))
     }
     const HandleAddressChange = e =>{
+        
         const {value} = e.target
-            setDatosIngresados((prevState)=>({
-                ...prevState,
-                address:value
-            }))
+        
+        setError((prevState)=>({
+            ...prevState,
+            address:true
+        }));
+
+        setDatosIngresados((prevState)=>({
+            ...prevState,
+            address:value    
+        }))
     }
     const HandleTomaChange = e =>{
+        
         const {value} = e.target
+
+        setError((prevState)=>({
+            ...prevState,
+            toma:true
+        }));
+
+
         if (value.length === 6 && !isNaN(value))
             setDatosIngresados((prevState)=>({
                 ...prevState,
@@ -74,11 +117,19 @@ const PagoCapasu = () =>{
         else 
             setDatosIngresados((prevState)=>({
                 ...prevState,
-                toma:""
+                toma:"tomaError"
+                //"La toma tiene que ser un número de 6 dígitos"
             }))
     }
     const HandleEmailChange = e =>{
+        
         const {value} = e.target
+
+        setError((prevState)=>({
+            ...prevState,
+            email:true
+        }));
+
         var mailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if(value.match(mailformat))
             {
@@ -91,9 +142,25 @@ const PagoCapasu = () =>{
             {
                 setDatosIngresados((prevState)=>({
                     ...prevState,
-                    email:""
+                    email:"emailError"
                 }))
             }
+    }
+    const OpenCLoseConfirmarDatos = ()=>{
+        setModalConfirmarDatos(!modalConfirmarDatos)
+    }
+    const ValidarDatos = () =>{
+        if(datosIngresados.name !== "" && datosIngresados.address !== "" && datosIngresados.folio !== "" && 
+        datosIngresados.email !== "" && datosIngresados.descripcion !== "" 
+        && datosIngresados.fechaaplicacion !== "") {
+            setPaypalBtns(true);
+            OpenCLoseConfirmarDatos();
+        }
+        else{
+            setPaypalBtns(false);
+            OpenCLoseConfirmarDatos();
+        }
+        
     }
     return(
         <div>
@@ -103,7 +170,7 @@ const PagoCapasu = () =>{
                 <img src={CapasuLg} className="image-fluid" alt=""/>
             </div>
             <Row>
-                <Col md>
+                <Col md className = "w-50">
                 <div className="container">
                     <div className = " my-5">
                         <FloatingLabel className = "mb-3" controlId="floatingInputGrid" label="Nombre ">
@@ -142,28 +209,50 @@ const PagoCapasu = () =>{
                 </Col>
                 
                 
-                <Col md className = "my-5">
+                <Col md className = "my-5 w-50">
                     <div className = "container">
-                    {datosIngresados.name !== ""  && datosIngresados.address !== ""
-                    && datosIngresados.toma !== "" && datosIngresados.email !== ""
-                    && datosIngresados.zona !== "" && datosIngresados.amount !== "" ?  
-                                <PayPalButtons data= {datosIngresados}/>
-                                :
-                                <div className = "col w-100 text-center">
-                                    <Alert variant="info">
-                                        Rellena todos los datos para realizar tu pago, recuerda que estos datos los puedes encontrar en el recibo de pago de CAPASU
-                                    </Alert>
-                                    <Alert variant="warning">
-                                        Una vez realizado, tu pago se verá reflejado en no más de tres días hábiles
-                                    </Alert>
-
-                                </div>
-                                
-                            }
+                        <RevisarInputsAgua datosIngresados = {datosIngresados} error = {error}/>
+                        <Alert variant="info">
+                            Rellena todos los datos para realizar tu pago, recuerda que estos datos los puedes encontrar en el recibo de pago de CAPASU
+                        </Alert>
+                        <div className = "alert alert-warning">
+                            <p className = "">Una vez realizado, tu pago se verá reflejado en no más de tres días hábiles</p>
+                        </div>
+                        <div className = "text-center">
+                            <input onClick =  {ValidarDatos} type = "button" className = "mt-3 text-decoration-none btnRedColor btn-lg btn-danger" value = "Confirmar mis datos "></input>
+                        </div>
                     </div>
                 </Col>
                 
-            </Row>            
+            </Row>       
+            <Modal 
+            size="lg"
+            show = {modalConfirmarDatos}
+            onHide = {()=>OpenCLoseConfirmarDatos()}>
+                <Modal.Header closeButton>Confirmar tus datos</Modal.Header>
+                <Modal.Body>
+                    {
+                        PaypalBtns ?
+                        <div className = "text-center">
+                            <p><strong>Nombre:</strong> {datosIngresados.name}</p>
+                            <p><strong>Dirección:</strong> {datosIngresados.address}</p>
+                            <p><strong>Correo Electrónico:</strong> {datosIngresados.email}</p>
+                            <p><strong>Folio:</strong> {datosIngresados.folio}</p>
+                            <p><strong>Fecha de Aplicación:</strong> {datosIngresados.fechaaplicacion}</p>
+                            <p><strong>Descripción:</strong> {datosIngresados.descripcion}</p>
+                            <p><strong>Monto a pagar:</strong> {datosIngresados.amount}</p>
+                            <PayPalButtonsAgua data= {datosIngresados} error = {error}/>
+                        </div>
+                        :
+                        <div>
+                            <h3 className = "alert alert-danger">Alguno los datos ingresados es incorrecto por favor revisa tus datos</h3>
+                        </div>
+                    }
+                </Modal.Body>
+                <Modal.Footer>
+                    <button className = "mt-3 text-decoration-none btnRedColor btn btn-danger" onClick = {()=>OpenCLoseConfirmarDatos()} >Cerrar</button>
+                </Modal.Footer>
+            </Modal>     
             <Footer/>            
         </div>
     )
