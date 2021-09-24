@@ -16,5 +16,9 @@ export const urls = {
     descargarLC: base + "licencia-comercial-descargar.php",
 
     pagosMultas : base + "pagos-multas-table.php",
-    loginMultas: base + "login-multas.php"
+    loginMultas: base + "login-multas.php",
+
+    loginMain: base + "login-main.php",
+    carouselMain : base + "carousel-main-table.php",
+    comunicadosMain: base + "main-comunicados-table.php"
 }

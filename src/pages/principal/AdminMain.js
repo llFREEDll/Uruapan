@@ -1,22 +1,23 @@
 
 import React,{useState} from 'react'
 
-import AdminJornadas from '../components/DIF/AdminJornadas'
-import AdminCarouselDif from '../components/DIF/AdminCarouselDif'
-import AdminComunicados from '../components/DIF/AdminComunicados'
+
+import AdminCarouselMain from '../../components/mainPage/AdminCarouselMain'
+
 import axios from 'axios'
-import {urls} from '../apiConection/Links'
-import '../styles/Admin.css'
+import {urls} from '../../apiConection/Links'
+import '../../styles/Admin.css'
 import md5 from 'md5'
 //import logo from '../assets/logo1.png'
-import '../styles/NavBar.css'
+import '../../styles/NavBar.css'
 import { Link } from 'react-router-dom'
 import { Alert } from 'react-bootstrap'
+import AdminComunicadosMain from '../../components/mainPage/AdminComunicadosMain'
 
 //en esta vista se despliegan las opciones de administrador
 // ver, editar, crear, eliminar los componentes de la
 // aplicacion
-const Admin = () => {
+const AdminMain = () => {
 
     //manejador para saber si esta logueado o no
     const [isLogin,setIsLogin] = useState(false)
@@ -42,7 +43,7 @@ const Admin = () => {
         form.append("user", userData.user );
         form.append("password",md5(userData.password) );
         form.append("METHOD","POST");
-        await axios.post(urls.login,form)
+        await axios.post(urls.loginMain,form)
         .then(response =>{
             if(response.data === "Login error"){
                 setIsLogin(false);
@@ -52,6 +53,7 @@ const Admin = () => {
                     password: ""
                 })
                 setLoginError(true)
+                //console.log(response.data)
             }
             else{
                 setIsLogin(true);
@@ -76,7 +78,7 @@ const Admin = () => {
     return (
         <>  
             <div className="navbar navbar-expand-lg navbar-dark backgroundColor">
-                <div className="mx-2 container-fluid " id = "container-fluid">
+                <div className="mx-2 container-fluid" id = "container-fluid">
                     <Link className="navbar-brand text-white" to="/">
                     <img src="https://uruapan.gob.mx/wp-content/uploads/2021/08/logo.png" alt=""  className=" d-inline-block align-text-center"/>
                     &emsp;Uruapan
@@ -88,9 +90,9 @@ const Admin = () => {
             </nav>
             {isLogin?
             <>
-                <AdminCarouselDif/>
-                <AdminJornadas/>
-                <AdminComunicados/>
+                <AdminCarouselMain/>
+                <AdminComunicadosMain/>
+                
             </>
             :
             <div className ="container ">
@@ -118,4 +120,4 @@ const Admin = () => {
     )
 }
 
-export default Admin
+export default AdminMain

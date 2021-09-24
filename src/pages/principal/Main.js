@@ -1,17 +1,19 @@
 import React from 'react'
-import NavBar from '../components/general/NavBar'
-import Carousel from '../components/mainPage/Carousel'
-import Card from '../components/general/Card'
-import Footer from '../components/general/Footer'
-import BgImageCardList from '../components/mainPage/BgImageCardList'
+import NavBar from '../../components/general/NavBar'
+import Carousel from '../../components/mainPage/Carousel'
+import Card from '../../components/general/Card'
+import Footer from '../../components/general/Footer'
+import BgImageCardList from '../../components/mainPage/BgImageCardList'
 
-import pamarImg from '../assets/PAMAR.jpg'
-import asistenciaSocialImg from '../assets/asistenciaSocial.jpg'
-import serviciosMedicosImg from '../assets/serviciosMedicos.jpg'
-import domingoDeRamosImg from '../assets/domingoDeRamos.jpg'
-import festivalDeVelasImg from '../assets/festivalDeVelas.jpg'
-import lugaresTuristicosImg from '../assets/lugaresTuristicos.jpg'
+import pamarImg from '../../assets/PAMAR.jpg'
+import asistenciaSocialImg from '../../assets/asistenciaSocial.jpg'
+import serviciosMedicosImg from '../../assets/serviciosMedicos.jpg'
+import domingoDeRamosImg from '../../assets/domingoDeRamos.jpg'
+import festivalDeVelasImg from '../../assets/festivalDeVelas.jpg'
+import lugaresTuristicosImg from '../../assets/lugaresTuristicos.jpg'
 import { Link } from 'react-router-dom'
+import MainComunicadosList from '../../components/mainPage/MainComunicadosList'
+
 
 
 const Main = ()=>(
@@ -59,18 +61,20 @@ const Main = ()=>(
                 </div>
             </div>
         </div>
-
+        <MainComunicadosList/>
         <BgImageCardList/>
-        <div className = "p-5 bg-primary text-white ">
-                <div className = "container-fluid py-5 text-center">
-                    <h1 className = "py-3 display-5 fw-bold">Pagos en línea</h1>
-                    <p className="fs-4 py-3">Realiza tus pagos en línea como, pago de servicio de agua (CAPASU), Pago de multas, pago de predial</p>
-                    <Link to = "/tramites-en-linea" className="py-3 btn  btn-outline-light btn-lg">Pagar en línea</Link>    
-                </div>
-            </div>
+       
 
         <Footer/>
     </div>
         
 )
 export default Main
+
+// <div className = "p-5 bg-primary text-white ">
+// <div className = "container-fluid py-5 text-center">
+//     <h1 className = "py-3 display-5 fw-bold">Pagos en línea</h1>
+//     <p className="fs-4 py-3">Realiza tus pagos en línea como, pago de servicio de agua (CAPASU), Pago de multas, pago de predial</p>
+//     <Link to = "/tramites-en-linea" className="py-3 btn  btn-outline-light btn-lg">Pagar en línea</Link>    
+// </div>
+// </div>

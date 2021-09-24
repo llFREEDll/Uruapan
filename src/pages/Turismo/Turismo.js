@@ -1,4 +1,4 @@
-import React from 'react';
+import {React ,useEffect} from 'react';
 import Footer from '../../components/general/Footer';
 import NavBar from '../../components/general/NavBar';
 import turismoIcon1 from '../../assets/turismo-1.png';
@@ -8,6 +8,9 @@ import { Col, Row } from 'react-bootstrap';
 import IconShadowCard from '../../components/turismo/IconShadowCard';
 import '../../styles/Turismo.css'
 const Turismo = () =>{
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[])
 return (
     <div>
         <NavBar/>

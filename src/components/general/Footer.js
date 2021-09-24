@@ -37,7 +37,7 @@ const Footer = () =>(
                         <br/>
                         <a target = "_blank" rel="noreferrer" className = "link text-white text-decoration-none" href = 'https://www.facebook.com/UruapanGobiernoMunicipal/?epa=SEARCH_BOX'>
                             <img width = "40" height = "40" alt="" src = {facebookIcon} />
-                            &emsp;@UruapanGobiernoMunicipal
+                            &emsp; UruapanGobiernoMunicipal
                         </a>
                         <br/>
                         <br/>
@@ -56,7 +56,7 @@ const Footer = () =>(
                 </div>
             </div>
         </div>
-        <div className = "py-4 backgroundColor"></div>    
+        
     </div>
     
 )
